@@ -72,6 +72,27 @@ public class Symvols {
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.anchor = GridBagConstraints.WEST;
         layout.setConstraints(resultLabel, constraints);
+        
+        mainFrame = new JFrame("Количество символов");
+        mainFrame.setSize(600, 450);
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setLayout(layout);
+        
+        mainFrame.add(txtLabel);
+        mainFrame.add(txtField);
+        mainFrame.add(calcButton);
+        mainFrame.add(resultLabel);
+        
+        mainFrame.pack();
+        mainFrame.setVisible(true);
     }
-    
+        public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new Symvols();
+            }
+        });
+    }
+ 
 }
