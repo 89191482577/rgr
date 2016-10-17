@@ -19,7 +19,32 @@ public class Symvols {
     private JFrame mainFrame;
     
     Symvols() {
-    
+        txtLabel = new JLabel("Текст");
+        txtField = new JTextField("Текст");
+        txtField.setHorizontalAlignment(JTextField.RIGHT);
+        kmLabel = new JLabel("");
+        calcButton = new JButton("Рассчитать");
+        calcButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                try {
+                   String txt = txtField.getText();
+                   int L=txt.length();
+                   resultLabel.setText("<html>Количество символов в тексте <font style='color: red; font-weight: bold;'>"+L);
+                }
+                catch ( NumberFormatException nfe ) {
+                    resultLabel.setText("Проверьте введённые данные");
+                }
+            }
+        });
+        resultLabel = new JLabel("Введите данные для рассчёта");
+        
+        GridBagLayout layout = new GridBagLayout();
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.weightx = 1.0;
+        constraints.weighty = 1.0;
+        constraints.insets = new Insets(5, 5, 5, 5);
+
     }
     
 }
