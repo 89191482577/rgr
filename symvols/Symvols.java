@@ -45,6 +45,33 @@ public class Symvols {
         constraints.weighty = 1.0;
         constraints.insets = new Insets(5, 5, 5, 5);
 
+        constraints.gridx = 0;
+        constraints.anchor = GridBagConstraints.WEST;
+        constraints.ipadx = 50;
+        constraints.gridy = 0;
+        layout.setConstraints(txtLabel, constraints);
+         
+        constraints.gridx = 1;
+        constraints.anchor = GridBagConstraints.EAST;
+        constraints.ipadx = 350;
+        constraints.gridy = 0;
+        layout.setConstraints(txtField, constraints);
+        
+        constraints.gridx = 2;
+        constraints.ipadx = 0;
+        constraints.gridy = 0;
+        layout.setConstraints(kmLabel, constraints);
+        
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        constraints.gridwidth = GridBagConstraints.REMAINDER;
+        constraints.anchor = GridBagConstraints.EAST;
+        layout.setConstraints(calcButton, constraints);
+        
+        constraints.gridy = 5;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.anchor = GridBagConstraints.WEST;
+        layout.setConstraints(resultLabel, constraints);
     }
     
 }
